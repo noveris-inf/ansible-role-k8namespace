@@ -1,0 +1,33 @@
+---
+
+- name: Define kubernetes_namespace_dir
+  set_fact:
+    kubernetes_namespace_dir: "{{ kubernetes_config_base }}/{{ kubernetes_namespace }}"
+
+- name: Redefine kubernetes_namespace
+  set_fact:
+    kubernetes_namespace: "{{ kubernetes_namespace }}"
+
+- name: Create kubernetes config base directory
+  command: "mkdir -p {{ kubernetes_namespace_dir }}"
+
+- name: namespace config location
+  file:
+    state: directory
+    path: "{{ kubernetes_namespace_dir }}"
+    owner: "root"
+    group: "root"
+    mode: 0755
+
+- name: Copy namespace config
+  template:
+    src: namespace.yml.j2
+    dest: "{{ kubernetes_namespace_dir }}/namespace.yml"
+    owner: root
+    group: root
+    mode: 0640
+
+- name: Apply namespace resources
+  command: "kubectl apply -f {{ kubernetes_namespace_dir }}/namespace.yml"
+
+...

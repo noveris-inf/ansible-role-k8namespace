@@ -1,0 +1,6 @@
+---
+
+kubernetes_config_base: "/etc/apps"
+kubernetes_namespace: "default"
+
+...
