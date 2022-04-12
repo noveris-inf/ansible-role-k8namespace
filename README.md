@@ -1,3 +1,3 @@
-# ansible-role-k8namespace
+# ansible-role-kube-namespace
 
-[![Latest](https://github.com/noveris-inf/ansible-role-k8namespace/workflows/Latest/badge.svg)](https://github.com/noveris-inf/ansible-role-k8namespace/actions?query=workflow%3ALatest) [![Versioned](https://github.com/noveris-inf/ansible-role-k8namespace/workflows/Versioned/badge.svg)](https://github.com/noveris-inf/ansible-role-k8namespace/actions?query=workflow%3AVersioned)
+[![latest](https://github.com/archmachina/ansible-role-kube-namespace/workflows/latest/badge.svg)](https://github.com/archmachina/ansible-role-kube-namespace/actions?query=workflow%3Alatest)
